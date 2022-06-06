@@ -1,0 +1,26 @@
+.element__like {
+    min-width: 22px;
+    height: 19px;
+    margin-right: 20px;
+    padding: 0;
+
+    /*т.к. элемент сделала через кнопку, надо убрать обводку и заливку по умолчанию*/
+    border: 0;
+    background-color: #fff;
+
+    /*добавила иконку*/
+    background-image: url(../../../images/element-like.svg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.element__like:hover {
+    opacity: 0.5;
+    transition: 500ms;
+}
+
+.element__like:active {
+    background-image: url(../../../images/element-like-full.svg);
+    opacity: 1;
+}

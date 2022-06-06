@@ -1,0 +1,13 @@
+.profile__edit-button {
+  grid-area: edit;
+  height: 24px;
+  width: 24px;
+  margin: 0;
+  justify-content: center;
+}
+
+
+.profile__edit-button:hover {
+opacity: 0.6;
+transition: 500ms;
+}

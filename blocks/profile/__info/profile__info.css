@@ -1,0 +1,15 @@
+.profile__info {
+    grid-column-start: 2;
+    display: grid;
+    grid-template-areas: 
+    "name edit"
+    "description description";
+
+    gap: 16px 18px;
+
+    justify-items: start;
+    align-items: center;
+
+    margin: 0 0 0 30px;
+    max-width: 336px;
+}

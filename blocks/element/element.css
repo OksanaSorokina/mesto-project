@@ -1,0 +1,16 @@
+.element {
+    display: flex;
+    flex-direction: column;
+    max-width: 282px;
+    max-height: 361px;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 100%;
+    
+    /*чтобы элементы не выходили за пределы родителя*/
+    overflow: hidden;
+
+}
+
