@@ -1,8 +1,17 @@
 .footer__copyright {
     font-size: 18px;
     font-weight: 400;
-    line-height: auto;
+    line-height: 1;
     margin: 0;
     padding: 0;
     color: #545454;
+
+    /*текст не переносить (помогло при адаптации)*/
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 320px) {
+    .header__logo {   
+        font-size: 14px;
+    }
 }
