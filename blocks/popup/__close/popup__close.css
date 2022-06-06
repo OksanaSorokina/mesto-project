@@ -1,0 +1,23 @@
+.popup__close {
+    background-image: url(../../../images/popup-close-icon.svg);
+    width: 32px;
+    height: 32px;
+
+    /*т.к. элемент сделала через кнопку, надо убрать обводку и заливку по умолчанию*/
+    border: 0;
+    background-color: transparent;
+
+    /*сдвигаю вправо/вверх от контейнера, меряю по верхней правой точке иконки*/
+    /*родительский элемент popup__container спозиционировала*/
+    position: absolute;
+    top: -40px;
+    right: -40px;
+}
+
+
+.popup__close:hover {
+    opacity: 0.6;
+    transition: 500ms;
+}
+
+

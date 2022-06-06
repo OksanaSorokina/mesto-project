@@ -6,7 +6,7 @@
 
     /*т.к. элемент сделала через кнопку, надо убрать обводку и заливку по умолчанию*/
     border: 0;
-    background-color: #fff;
+    background-color: transparent;
 
     /*добавила иконку*/
     background-image: url(../../../images/element-like.svg);

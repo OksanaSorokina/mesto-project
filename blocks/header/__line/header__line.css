@@ -1,4 +1,5 @@
 .header__line {
-    color: #545454;
+    color: rgba(84, 84, 84, 0.7);
     margin: 41px 0 0;
+    height: 1px;
 }
