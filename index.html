@@ -24,6 +24,7 @@
     />
 </head>
 <body class="page">
+  <!--Хедер-->
   <header class="header">
     <img 
       src="./images/logo.svg" 
@@ -34,6 +35,8 @@
       alt="декорация линия"
       class="header__line">
   </header>
+
+  <!--Основной контент-->
   <main class="content">
     <!--Профиль-->
     <section class="profile">
@@ -159,37 +162,40 @@
       </li>
     </ul>
   </main>
-    <!--Футер-->
-    <footer class="footer">
-      <p class="footer__copyright">&copy;&nbsp;2020 Mesto Russia</p>
-    </footer>
-</body>
-<!--Поп-ап-->
-<div class="popup popup_opened">
-  <div class="popup__container">
-    <button 
-      type="button" 
-      class="popup__close">
-    </button>
-    <h3 
-      class="popup__title">
-      Редактировать профиль
-    </h3>
-    <form class="popup__form">
-      <input 
-        type="text"
-        class="popup__input"
-        placeholder="Имя">
-      <input 
-        type="text"
-        class="popup__input"
-        placeholder="О себе">
+
+  <!--Футер-->
+  <footer class="footer">
+    <p class="footer__copyright">&copy;&nbsp;2020 Mesto Russia</p>
+  </footer>
+
+  <!--Поп-ап-->
+  <div class="popup popup_opened">
+    <div class="popup__container">
       <button 
-        type="submit"
-        class="popup__button">
-        Сохранить
+        type="button" 
+        class="popup__close">
       </button>
-    </form>
+      <h3 
+        class="popup__title">
+        Редактировать профиль
+      </h3>
+      <form class="popup__form">
+        <input 
+          type="text"
+          class="popup__input"
+          placeholder="Имя">
+        <input 
+          type="text"
+          class="popup__input"
+          placeholder="О себе">
+        <button 
+          type="submit"
+          class="popup__button">
+          Сохранить
+        </button>
+      </form>
+    </div>
   </div>
-</div>
+
+</body>
 </html>
