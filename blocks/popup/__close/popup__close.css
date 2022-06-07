@@ -12,6 +12,9 @@
     position: absolute;
     top: -40px;
     right: -40px;
+
+    /*при наведении курсор станет рукой*/
+    cursor: pointer;
 }
 
 
@@ -21,3 +24,9 @@
 }
 
 
+
+@media screen and (max-width: 320px) {
+    .popup__close {
+        right: 0;
+    }
+}

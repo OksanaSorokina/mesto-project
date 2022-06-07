@@ -13,3 +13,11 @@
     margin: 0 0 0 30px;
     max-width: 336px;
 }
+
+@media screen and (max-width: 320px) {
+    .profile__info {
+        justify-items: center;
+        margin: 0 auto;
+        gap: 14px 10px;
+    }
+}

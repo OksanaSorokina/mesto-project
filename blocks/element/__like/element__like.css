@@ -13,11 +13,14 @@
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+
+    /*при наведении курсор становится рукой*/
+    cursor: pointer;
 }
 
 .element__like:hover {
     opacity: 0.5;
-    transition: 500ms;
+    transition: 200ms;
 }
 
 .element__like:active {
