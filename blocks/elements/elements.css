@@ -1,19 +1,30 @@
 .elements {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 282px);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px 17px;
     
     width: calc(100% - 2*200px);
     margin: 0 auto;
-
-    /*overflow: hidden;*/
-
-    list-style-type: none;
     padding: 0;
+
+    /*контент по центру по горизонтали*/
+    justify-items: center;
+    
+    /*убрала маркеры списка*/
+    list-style-type: none;   
 }
 
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 1150px) {
     .elements {   
+        grid-template-columns: repeat(2, 1fr);  
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .elements {   
+        grid-template-columns: repeat(1, 1fr);
         width: calc(100% - 2*19px);
     }
 }

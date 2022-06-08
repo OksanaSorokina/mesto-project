@@ -1,7 +1,7 @@
 .element {
     display: flex;
     flex-direction: column;
-    max-width: 282px;
+    width: 100%;
     max-height: 361px;
     margin: 0;
     padding: 0;
@@ -14,3 +14,8 @@
 
 }
 
+@media screen and (max-width: 767px) {
+    .element {   
+        max-width: 282px;
+    }
+}

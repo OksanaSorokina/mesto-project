@@ -8,10 +8,12 @@
 
     /*текст не переносить (помогло при адаптации)*/
     white-space: nowrap;
+
+    
 }
 
 @media screen and (max-width: 320px) {
-    .header__logo {   
+    .footer__copyright {   
         font-size: 14px;
     }
 }
