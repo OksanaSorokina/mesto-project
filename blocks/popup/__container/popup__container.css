@@ -1,8 +1,8 @@
 .popup__container {
-    max-width: 430px;
+    width: 430px;
     /*минимальная выcота, т.к. текста м.б. добавлено много*/
     min-height: 330px;
-    padding: 0 36px;
+    padding-left: 36px;
 
 
     background-color: #fff;
@@ -12,25 +12,24 @@
     /*спозиционировала родительский элемент, чтобы можно было задать
     абс.позиционирование элементам внутри контейнера */
     position: relative;
-
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
     .popup__container {
-        padding: 0 29px;
+        width: 356px;
+        padding-left: 29px;
     }
 }
 
 @media screen and (max-width: 767px) {
     .popup__container {
-        padding: 0 22px;
+        width: 282px;
+        min-height: 322px;
+        padding-left: 22px;
     }
 }
 
-
-@media screen and (max-width: 320px) {
-    .popup__container {
-        max-width: 282px; 
-    }
-}
