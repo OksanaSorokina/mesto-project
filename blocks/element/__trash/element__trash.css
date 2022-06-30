@@ -1,0 +1,26 @@
+.element__trash {
+    min-width: 18px;
+    height: 19px;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    /*т.к. элемент сделала через кнопку, надо убрать обводку и заливку по умолчанию*/
+    border: 0;
+    background-color: transparent;
+
+     /*добавила иконку*/
+     background-image: url(../../../images/trash.svg);
+     background-repeat: no-repeat;
+     background-position-x: center;
+     background-position-y: center;
+ 
+     /*при наведении курсор становится рукой*/
+     cursor: pointer;
+ }
+ 
+ .element__trash:hover {
+     opacity: 0.6;
+     transition: 200ms;
+ }

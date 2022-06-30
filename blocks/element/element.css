@@ -8,6 +8,8 @@
     border-radius: 10px;
     background-color: #fff;
     width: 100%;
+
+    position: relative;
     
     /*чтобы элементы не выходили за пределы родителя*/
     overflow: hidden;
