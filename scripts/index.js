@@ -45,7 +45,7 @@ popupForm.addEventListener('submit', function(evn) {
 const divPopupCard = document.querySelector('#popup-card');
 const btnPopupCardClose = divPopupCard.querySelector('.popup__close');
 const popupFormCard = divPopupCard.querySelector('.popup__form');
-const popupNameCard = divPopupCard.querySelector('#popup-name');
+const popupNameCard = divPopupCard.querySelector('#popup-name-card');
 const popupImageCard = divPopupCard.querySelector('#popup-image');
 
 const profileButton = document.querySelector('.profile__button');
