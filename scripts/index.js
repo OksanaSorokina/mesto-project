@@ -1,32 +1,40 @@
 
-const divPopupProfile = document.querySelector('#popup-profile');
-const btnPopupClose = divPopupProfile.querySelector('.popup__close');
-const popupName = divPopupProfile.querySelector('#popup-name');
-const popupDescription = divPopupProfile.querySelector('#popup-description');
+const popupProfile = document.querySelector('#popup-profile');
+const btnPopupClose = popupProfile.querySelector('.popup__close');
+const popupName = popupProfile.querySelector('#popup-name');
+const popupDescription = popupProfile.querySelector('#popup-description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 const popupButton = document.querySelector('.popup__button');
-const popupForm = divPopupProfile.querySelector('.popup__form');
+const popupForm = popupProfile.querySelector('.popup__form');
 const cardElements = document.querySelectorAll('.element'); //в cardElements будет лежать массив
 
 const imageClose = document.querySelector('#image-close');
 const popupImage = document.querySelector('#popup-big-image');
 const popupPicture = popupImage.querySelector('.popup-image__picture');
+const popupCaption = popupImage.querySelector('.popup-image__caption');
 
 // открываю поп-ап редактирования профиля
 const btnPopupOpen = document.querySelector('.profile__edit-button');
 
-btnPopupOpen.addEventListener('click', function(evn) {
-    divPopupProfile.classList.add('popup_opened');
+function openPopup(popup) {
+    popup.classList.add('popup_opened');
+}
 
-popupName.value = profileName.textContent;
-popupDescription.value = profileDescription.textContent;
+function closePopup(popup) {
+    popup.classList.remove('popup_opened');
+}
+
+btnPopupOpen.addEventListener('click', function(evn) {
+    openPopup(popupProfile);
+    popupName.value = profileName.textContent;
+    popupDescription.value = profileDescription.textContent;
 })
 
 
 // закрываю поп-ап редактирования профиля
 btnPopupClose.addEventListener('click', function (evn) {
-    divPopupProfile.classList.remove('popup_opened');
+    closePopup(popupProfile);
 })
 
 
@@ -37,16 +45,16 @@ popupForm.addEventListener('submit', function(evn) {
     
     // Предыдущая страница по умолчанию  - стандартное событие. Мы велим не возвращать предыдущую страницу после отправки:
     evn.preventDefault();
-    divPopupProfile.classList.remove('popup_opened');
+    closePopup(popupProfile);
 })
 
 
 //добавление карточек на сайт
-const divPopupCard = document.querySelector('#popup-card');
-const btnPopupCardClose = divPopupCard.querySelector('.popup__close');
-const popupFormCard = divPopupCard.querySelector('.popup__form');
-const popupNameCard = divPopupCard.querySelector('#popup-name-card');
-const popupImageCard = divPopupCard.querySelector('#popup-image');
+const popupCard = document.querySelector('#popup-card');
+const btnPopupCardClose = popupCard.querySelector('.popup__close');
+const popupFormCard = popupCard.querySelector('.popup__form');
+const popupNameCard = popupCard.querySelector('#popup-name-card');
+const popupImageCard = popupCard.querySelector('#popup-image');
 
 const profileButton = document.querySelector('.profile__button');
 const cardTemplate = document.querySelector('#card-template');
@@ -56,7 +64,7 @@ const elements = document.querySelector('.elements');
 
 //открываю поп-ап создания карточки
 profileButton.addEventListener('click', function(evn) {
-    divPopupCard.classList.add('popup_opened');  
+    openPopup(popupCard);
     
     popupNameCard.value = '';
     popupImageCard.value = '';
@@ -65,29 +73,31 @@ profileButton.addEventListener('click', function(evn) {
 
 //закрываю поп-ап создания карточки
 btnPopupCardClose.addEventListener('click', function (evn) {
-    divPopupCard.classList.remove('popup_opened');
+    closePopup(popupCard);
 })
+
 
 // функция, которая удаляет элемент со страницы (её мы вызываем два раза - 
 //для карточек, которые  на странице при загрузке сайта и для новых карточек)
 function removeCard(evn) {
-    let localTrash = evn.target;
-    let localCard = localTrash.parentElement;
+    const localTrash = evn.target;
+    const localCard = localTrash.parentElement;
     localCard.remove();
 }
 
 // функция, которая сохраняет/удаляет, т.е. переключает(toggle) лайки
 function addLike(evn) {
-    let localLike = evn.target;
+    const localLike = evn.target;
     localLike.classList.toggle('element__like_active');
 }
 
 //функция, которая открывает поп-ап просмотра картинки
 function showImage(evn) {
-    let localImage = evn.target;
-    let link = localImage.getAttribute('src');
+    const link = evn.target.getAttribute('src');
     popupPicture.setAttribute('src', link);
-    popupImage.classList.add('popup-image_opened');
+    const title = evn.target.parentElement.querySelector('.element__title');
+    popupCaption.textContent = title.textContent;
+    openPopup(popupImage);
 }
 
 
@@ -104,15 +114,15 @@ function createCard(descr, img) {
 
    
     // вешаем слушателя на кнопку удаления
-    let localTrash = newCard.querySelector('.element__trash');
+    const localTrash = newCard.querySelector('.element__trash');
     localTrash.addEventListener('click', removeCard);   
 
     //вешаю слушателя на кнопку лайка
-    let localLike = newCard.querySelector('.element__like');
+    const localLike = newCard.querySelector('.element__like');
     localLike.addEventListener('click', addLike);
 
     // слушатель на просмотр картинки
-    let localPicture = newCard.querySelector('.element__image');
+    const localPicture = newCard.querySelector('.element__image');
     localPicture.addEventListener('click', showImage);
 
     return newCard;
@@ -125,19 +135,19 @@ popupFormCard.addEventListener('submit', function(evn) {
 
      // Предыдущая страница по умолчанию  - стандартное событие. Мы велим не возвращать предыдущую страницу после отправки:
      evn.preventDefault();
-     divPopupCard.classList.remove('popup_opened');
+     closePopup(popupCard);
 
 })
 
 initialCards.forEach( card => {
-    let newCard = createCard(card.name, card.link);
+    const newCard = createCard(card.name, card.link);
     elements.append(newCard); 
 }) 
 
 
 // закрываю поп-ап просмотра картинки
 imageClose.addEventListener('click', function (evn) {
-  popupImage.classList.remove('popup-image_opened');
+  closePopup(popupImage);
 })
 
 
